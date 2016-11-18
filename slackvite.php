@@ -1,19 +1,15 @@
 <?php
-/**
- * Plugin Name:     Slackvite
- * Plugin URI:      https://slackvite.com/wordpress
- * Description:     Create a public Slack invite page with in a WordPress page
- * Author:          Andy Brudtkuhl
- * Author URI:      https://youmetandy.com
- * Text Domain:     slackvite
- * Domain Path:     /languages
- * Version:         0.1.0
- *
- * @package         Slackvite
- */
+/*
+Plugin Name: Slackvite
+Plugin URI: http://hbt.io/
+Version: 1.0.1
+Author: Harri Bell-Thomas
+Author URI: http://hbt.io/
+*/
 
 class Slackvite {
-    /**
+
+	/**
 	 * A reference to an instance of this class.
 	 */
 	private static $instance;
@@ -45,10 +41,16 @@ class Slackvite {
 
 
 		// Add a filter to the attributes metabox to inject template into the cache.
-		add_filter(
-			'page_attributes_dropdown_pages_args',
-			array( $this, 'register_project_templates' )
-		);
+    	if ( version_compare( floatval($GLOBALS['wp_version']), '4.7', '<' ) ) { // 4.6 and older
+        		add_filter(
+            		'page_attributes_dropdown_pages_args',
+            		array( $this, 'register_project_templates' )
+        		);
+    	} else { // Add a filter to the wp 4.7 version attributes metabox
+        		add_filter(
+            		'theme_page_templates', array( $this, 'add_new_template' )
+        		);
+    	}
 
 
 		// Add a filter to the save post to inject out template into the page cache
@@ -68,11 +70,20 @@ class Slackvite {
 
 		// Add your templates to this array.
 		$this->templates = array(
-			'slackvite.php' => 'Slackvite',
+			'templates/slackvite.php' => 'Slackvite',
 		);
 
+        add_action( 'wp_enqueue_scripts', array( $this, 'register_style') );
 	}
 
+	/**
+     	 * Adds our template to the page dropdown for v4.7+
+     	 *
+     	 */
+    	public function add_new_template( $posts_templates ) {
+        	$posts_templates = array_merge( $posts_templates, $this->templates );
+        	return $posts_templates;
+    	}
 
 	/**
 	 * Adds our template to the pages cache in order to trick WordPress
@@ -142,6 +153,11 @@ class Slackvite {
 		return $template;
 
 	}
+
+    public function register_style() {
+        wp_register_style( 'slackvite-styles',  plugin_dir_url( __FILE__ ) . 'templates/slackvite.css' );
+        wp_enqueue_style( 'slackvite-styles' );
+    }
 
 }
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );

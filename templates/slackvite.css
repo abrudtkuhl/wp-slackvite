@@ -1,0 +1,38 @@
+body {
+  font-family: 'lato', sans-serif;
+  color: #fff;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover; }
+
+.landing-submit {
+  margin-top: 10px; }
+
+.landing-hero {
+  background: rgba(51, 51, 51, 0.8);
+  padding: 50px; }
+  .landing-hero p { color: #fff; }
+  .landing-hero h1 {
+    color: #FFF;
+    font-size: 205%; }
+
+
+.footer {
+  text-align: center;
+  color: #fff;
+  padding: 20px; }
+  .footer a {
+    color: #fff; }
+
+@media (min-width: 992px) {
+  .landing-container {
+    padding: 20% 20%; }
+  .landing-submit {
+    margin-top: 0; } }
+
+@media (min-width: 1200px) {
+  .landing-container {
+    padding: 20% 20%; }
+  .landing-submit {
+    margin-top: 0; } }
