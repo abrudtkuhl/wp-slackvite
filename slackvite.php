@@ -159,5 +159,9 @@ class Slackvite {
         wp_enqueue_style( 'slackvite-styles' );
     }
 
+    public function get_background_image() {
+        return 'http://www.resortcollection.com/wp-content/themes/resortcollection/property-images/summit/summit-beach-resort-panama-city-beach-fl-beach-01.jpg';
+    }
+
 }
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );

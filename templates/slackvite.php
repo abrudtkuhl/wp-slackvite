@@ -1,3 +1,7 @@
+<?php
+    $slackvite = Slackvite::get_instance();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
     <title>Join <?php the_title(); ?> On Slack - Slackvite</title>
     <meta name="description" value="Join {{$title}} Slack Team. Powered by Slackvite.">
 
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ) . 'slackvite.css'; ?>">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -20,7 +24,7 @@
     <link rel="shortcut icon" href="https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png">
 </head>
 
-<body id="team-landing" style="background: url('https://unsplash.it/3000/2000/?random') no-repeat 50% 50% fixed; background-size: cover;">
+<body id="team-landing" style="background: url('<?php echo $slackvite->get_background_image(); ?>') no-repeat 50% 50% fixed; background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
