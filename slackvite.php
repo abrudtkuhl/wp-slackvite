@@ -32,6 +32,8 @@ class Slackvite {
 
 	}
 
+	public $flash_message;
+
 	/**
 	 * Initializes the plugin by setting filters and administration functions.
 	 */
@@ -67,6 +69,13 @@ class Slackvite {
 			array( $this, 'view_project_template')
 		);
 
+		// action to process form posts
+		add_action( 'init', array( $this, 'slackvite_invite_signup' ) );
+
+		//create new top-level menu
+		add_action('admin_menu', array( $this, 'slackvite_create_menu' ) );
+
+		add_action( 'admin_init', array($this, 'register_slackvite_settings' ) );
 
 		// Add your templates to this array.
 		$this->templates = array(
@@ -166,6 +175,59 @@ class Slackvite {
 	public function get_landing_page_url() {
 		global $wp;
 		return home_url(add_query_arg(array(),$wp->request));
+	}
+
+	public function slackvite_invite_signup() {
+		if ( isset( $_POST['slackvite-email'] ) ) {
+
+			$args = array(
+				'body' => array(
+					'email'	=> 	$_POST['slackvite-email'],
+					'key'	=>	'80984f3d63fc57fafa5945b6c960d3150a987d8f'
+				)
+			);
+
+			$response = wp_remote_post( 'http://localhost:8000/api/invite', $args);
+
+			if ( 200 == $response['response']['code'] ) {
+				$this->flash_message = '<strong>Success!</strong> ' . $response['body']['message'];
+			} elseif ( 422 == $response['response']['code'] ) {
+				$this->flash_message = '<strong>There was a problem:</strong> '.$response['body'];
+			}
+
+			if ( is_wp_error($response) ) {
+				$this->flash_message = 'Well, something bad happened.';
+			}
+		}
+	}
+
+	function slackvite_create_menu() {
+		add_submenu_page('options-general.php', 'Slackvite Settings', 'Slackvite Settings', 'administrator', __FILE__, array($this, 'slackvite_settings_page' ) , plugins_url('/images/icon.png', __FILE__) );
+	}
+
+	function slackvite_settings_page() { ?>
+		<div class="wrap">
+			<h1>Slackvite Plugin Settings</h1>
+
+			<form method="post" action="options.php">
+			    <?php settings_fields( 'slackvite-settings-group' ); ?>
+			    <?php do_settings_sections( 'slackvite-settings-group' ); ?>
+			    <table class="form-table">
+			        <tr valign="top">
+				        <th scope="row">Slackvite Team API Key</th>
+				        <td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_api_key') ); ?>" /></td>
+			        </tr>
+			    </table>
+
+			    <?php submit_button(); ?>
+
+			</form>
+		</div>
+	<?php }
+
+	function register_slackvite_settings() {
+		//register our settings
+		register_setting( 'slackvite-settings-group', 'slackvite_team_api_key' );
 	}
 }
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );

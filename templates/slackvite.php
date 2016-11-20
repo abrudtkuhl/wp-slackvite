@@ -30,15 +30,26 @@
             <div class="col-md-12">
                 <div class="landing-container">
                     <div class="landing-hero">
+                        <?php if (count($_POST)>0) : ?>
+                            <div class="alert alert-success">
+                                <strong>Success! Check your email to confirm</strong>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ( isset( $_POST['slackvite-email'] ) && isset( $slackvite->flash_message ) ) : ?>
+                            <div class="alert alert-danger">
+                                <strong>Oops, An Error Happened</strong><br />
+                                <?php echo $slackvite->flash_message; ?>
+                            </div>
+                        <?php endif; ?>
                         <h1>Join <strong><?php the_title(); ?></strong> On Slack</h1>
                         <p>Enter your email address in the form below, click <em>Get Invite</em>, and your invitation will be on its way.</p>
-                        <form action="/app/invite" method="post">
+                        <form action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?>" method="post">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-9">
-                                    <input type="text" name="email" id="email" class="form-control input-lg"/>
+                                    <input type="text" name="slackvite-email" id="email" class="form-control input-lg"/>
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <input type="submit" value="Get Invite" class="btn btn-success btn-lg text-uppercase btn-block landing-submit" />
+                                    <input type="submit" value="Signup" class="btn btn-success btn-lg text-uppercase btn-block landing-submit" />
                                 </div>
                             </div>
                         </form>
