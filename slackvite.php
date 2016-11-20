@@ -160,8 +160,12 @@ class Slackvite {
     }
 
     public function get_background_image() {
-        return 'http://www.resortcollection.com/wp-content/themes/resortcollection/property-images/summit/summit-beach-resort-panama-city-beach-fl-beach-01.jpg';
-    }
+		return 'https://source.unsplash.com/random/2000x2000';
+	}
 
+	public function get_landing_page_url() {
+		global $wp;
+		return home_url(add_query_arg(array(),$wp->request));
+	}
 }
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );

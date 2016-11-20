@@ -52,6 +52,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
+= 0.2 = imported landing page design and assets from https://slackvite.com to create custom page templates
 = 0.1 = Implemented https://github.com/wpexplorer/page-templater to create page templates from a WP Plugin
 * List versions from most recent at top to oldest at bottom.
 

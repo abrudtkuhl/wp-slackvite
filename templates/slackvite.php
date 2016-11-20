@@ -49,7 +49,7 @@
     </div>
 
     <footer class="footer navbar-fixed-bottom" role="footer">
-        <a href="https://slackvite.com" title="Slack Team Signup Pages">powered by slackvite</a>
+        <a href="https://slackvite.com/?utm_source=wordpress_plugin&utm_medium=landing_page&utm_content=<?php echo $slackvite->get_landing_page_url(); ?>" title="Slack Team Signup Pages">powered by <strong>slackvite</strong></a>
     </footer>
 
     <!-- JavaScripts -->
