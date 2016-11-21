@@ -14,7 +14,7 @@ Quickly setup an invite page for a public Slack community
 Description
 ------
 
-Setup a custom invite landing page for your public Slack community using the Slackvite WordPress plugin. Uses (Slackvite API)['https://slackvite.com/?utm_campaign=githhub']
+Setup a custom invite landing page for your public Slack community using the Slackvite WordPress plugin. Uses [Slackvite API](https://slackvite.com/?utm_campaign=githhub)
 
 Installation
 ------
