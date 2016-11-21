@@ -210,7 +210,7 @@ class Slackvite {
 			<h1>Slackvite Plugin Settings</h1>
 			<h2>Installation</h2>
 			<ol>
-				<li><a href="https://slackvite.com/app/home" title="Get Slackvite API key" target="_blank">Get the Slackvite API</a> key for your team</li>
+				<li><a href="https://slackvite.com/app/login" title="Get Slackvite API key" target="_blank">Get the Slackvite API</a> key for your team</li>
 				<li>Paste it below</li>
 				<li><a href="/wp-admin/post-new.php?post_type=page">Create New Page</a></li>
 				<li>Select Slackvite Page Template under `Page Attributes` in right sidebar</li>
@@ -227,7 +227,7 @@ class Slackvite {
 					</tr>
 					<tr valign="top">
 				        <th scope="row">Slackvite Team API Key</th>
-				        <td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_api_key') ); ?>" /> <small><a href="https://slackvite.com/app/home" title="Get Slackvite API key" target="_blank">Get Slackvite API Key</a></small></td>
+				        <td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_api_key') ); ?>" /> <small><a href="https://slackvite.com/app/login" title="Get Slackvite API key" target="_blank">Get Slackvite API Key</a></small></td>
 			        </tr>
 			    </table>
 
