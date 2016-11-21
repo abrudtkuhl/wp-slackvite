@@ -223,7 +223,7 @@ class Slackvite {
 			    <table class="form-table">
 					<tr valign="top">
 						<th scope="row">Slackvite Team</th>
-						<td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_name') ); ?>" placeholder="Slackvite" /></td>
+						<td><input type="text" name="slackvite_team_name" value="<?php echo esc_attr( get_option('slackvite_team_name') ); ?>" placeholder="Slackvite" /></td>
 					</tr>
 					<tr valign="top">
 				        <th scope="row">Slackvite Team API Key</th>
@@ -243,6 +243,7 @@ class Slackvite {
 	function register_slackvite_settings() {
 		//register our settings
 		register_setting( 'slackvite-settings-group', 'slackvite_team_api_key' );
+		register_setting( 'slackvite-settings-group', 'slackvite_team_name' );
 	}
 }
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );
