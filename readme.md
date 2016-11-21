@@ -29,10 +29,10 @@ e.g.
 
 Frequently Asked Questions
 ------
-Do I need a Slack account? Yes
-Do I need to be a Team Admin to use this? Yes
-Do you provide help? Yes. https://slackvite.com/help
-Can I customize the background image? Yes, with the Pro version. https://slackvite.com/WordPress
+Do I need a Slack account? Yes  
+Do I need to be a Team Admin to use this? Yes  
+Do you provide help? Yes. https://slackvite.com/help  
+Can I customize the background image? Yes, with the Pro version. https://slackvite.com/WordPress  
 
 How Does This Work
 ------
