@@ -183,11 +183,11 @@ class Slackvite {
 			$args = array(
 				'body' => array(
 					'email'	=> 	$_POST['slackvite-email'],
-					'key'	=>	'80984f3d63fc57fafa5945b6c960d3150a987d8f'
+					'key'	=>	get_option('slackvite_team_api_key')
 				)
 			);
 
-			$response = wp_remote_post( 'http://localhost:8000/api/invite', $args);
+			$response = wp_remote_post( 'https://slackvite.com/api/invite', $args);
 
 			if ( 200 == $response['response']['code'] ) {
 				$this->flash_message = '<strong>Success!</strong> ' . $response['body']['message'];
