@@ -216,7 +216,7 @@ class Slackvite {
 				<li>Select Slackvite Page Template under `Page Attributes` in right sidebar</li>
 			</ol>
 
-			<h2>Settings</h2>
+			<h2>Landing Page Configuration</h2>
 			<form method="post" action="options.php">
 			    <?php settings_fields( 'slackvite-settings-group' ); ?>
 			    <?php do_settings_sections( 'slackvite-settings-group' ); ?>
