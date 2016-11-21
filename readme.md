@@ -53,11 +53,11 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 Changelog
 ------
-= 0.4 = Slackvite plugin settings for team name, added instructions on plugin settings page
-= 0.3 = Slackvite Invite API integration, plugin settings page
-= 0.2 = imported landing page design and assets from https://slackvite.com to create custom page templates
-= 0.1 = Implemented https://github.com/wpexplorer/page-templater to create page templates from a WP Plugin
-* List versions from most recent at top to oldest at bottom.
+= 0.4 = Slackvite plugin settings for team name, added instructions on plugin settings page  
+= 0.3 = Slackvite Invite API integration, plugin settings page  
+= 0.2 = imported landing page design and assets from https://slackvite.com to create custom page templates  
+= 0.1 = Implemented https://github.com/wpexplorer/page-templater to create page templates from a WP Plugin  
+* List versions from most recent at top to oldest at bottom.  
 
 Credit
 ------
