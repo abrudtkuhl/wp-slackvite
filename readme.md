@@ -36,8 +36,8 @@ Frequently Asked Questions
 ------
 Do I need a Slack account? Yes  
 Do I need to be a Team Admin to use this? Yes  
-Do you provide help? Yes. https://slackvite.com/help  
-Can I customize the background image? Yes, with the Pro version. https://slackvite.com/WordPress  
+Do you provide help? Yes, in Slack not so coincidentally https://slackvite.com/slackvite  
+Can I customize the background image? Yes, with the Pro version. https://slackvite.com/app/home  
 
 How Does This Work
 ------

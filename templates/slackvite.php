@@ -43,7 +43,7 @@
                         <?php endif; ?>
 
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                            <h1>Join <strong><?php echo get_option('slackvite_team_name'); ?></strong> On Slack</h1>
+                            <h1>Join <strong><?php echo get_option('slackvite_team_api_key'); ?></strong> On Slack</h1>
                             <?php if( strlen(get_the_content()) > 0 ) : ?>
                                 <?php the_content(); ?>
                             <?php else: ?>
