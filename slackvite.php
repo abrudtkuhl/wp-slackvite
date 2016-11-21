@@ -2,7 +2,7 @@
 /*
 Plugin Name: Slackvite
 Plugin URI: https://slackvite.com/wordpress
-Version: 0.3
+Version: 0.4
 Author: Andy Brudtkuhl
 Author URI: https://youmetandy.com
 */
@@ -208,20 +208,35 @@ class Slackvite {
 	function slackvite_settings_page() { ?>
 		<div class="wrap">
 			<h1>Slackvite Plugin Settings</h1>
+			<h2>Installation</h2>
+			<ol>
+				<li><a href="https://slackvite.com/app/home" title="Get Slackvite API key" target="_blank">Get the Slackvite API</a> key for your team</li>
+				<li>Paste it below</li>
+				<li><a href="/wp-admin/post-new.php?post_type=page">Create New Page</a></li>
+				<li>Select Slackvite Page Template under `Page Attributes` in right sidebar</li>
+			</ol>
 
+			<h2>Settings</h2>
 			<form method="post" action="options.php">
 			    <?php settings_fields( 'slackvite-settings-group' ); ?>
 			    <?php do_settings_sections( 'slackvite-settings-group' ); ?>
 			    <table class="form-table">
-			        <tr valign="top">
+					<tr valign="top">
+						<th scope="row">Slackvite Team</th>
+						<td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_name') ); ?>" placeholder="Slackvite" /></td>
+					</tr>
+					<tr valign="top">
 				        <th scope="row">Slackvite Team API Key</th>
-				        <td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_api_key') ); ?>" /></td>
+				        <td><input type="text" name="slackvite_team_api_key" value="<?php echo esc_attr( get_option('slackvite_team_api_key') ); ?>" /> <small><a href="https://slackvite.com/app/home" title="Get Slackvite API key" target="_blank">Get Slackvite API Key</a></small></td>
 			        </tr>
 			    </table>
 
 			    <?php submit_button(); ?>
 
 			</form>
+			<h2>Help</h2>
+			For help, <a href="https://slackvite.com/slackvite" target="_blank">join our Slackvite Slack community</a><br />
+			If you find a bug, <a href="https://github.com/abrudtkuhl/wp-slackvite/issues" target="_blank">submit an issue on Github</a>
 		</div>
 	<?php }
 

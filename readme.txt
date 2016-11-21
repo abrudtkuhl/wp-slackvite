@@ -4,7 +4,7 @@ Donate link: https://slackvite.com/wordpress
 Tags: slack, landing page
 Requires at least: 3.7
 Tested up to: 4.6.1
-Stable tag: 0.1.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,8 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
+= 0.4 = Slackvite plugin settings for team name, added instructions on plugin settings page
+= 0.3 = Slackvite Invite API integration, plugin settings page
 = 0.2 = imported landing page design and assets from https://slackvite.com to create custom page templates
 = 0.1 = Implemented https://github.com/wpexplorer/page-templater to create page templates from a WP Plugin
 * List versions from most recent at top to oldest at bottom.

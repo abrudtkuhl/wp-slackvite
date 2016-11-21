@@ -41,8 +41,16 @@
                                 <?php echo $slackvite->flash_message; ?>
                             </div>
                         <?php endif; ?>
-                        <h1>Join <strong><?php the_title(); ?></strong> On Slack</h1>
-                        <p>Enter your email address in the form below, click <em>Get Invite</em>, and your invitation will be on its way.</p>
+
+                        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                            <h1>Join <strong><?php echo get_option('slackvite_team_api_key'); ?></strong> On Slack</h1>
+                            <?php if( strlen(get_the_content()) > 0 ) : ?>
+                                <?php the_content(); ?>
+                            <?php else: ?>
+                                <p>Enter your email address in the form below, click <em>Get Invite</em>, and your invitation will be on its way.</p>
+                            <?php endif; ?>
+                        <?php endwhile; endif; ?>
+
                         <form action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?>" method="post">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-9">
