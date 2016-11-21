@@ -19,13 +19,18 @@ Setup a custom invite landing page for your public Slack community using the Sla
 Installation
 ------
 
-This section describes how to install the plugin and get it working.
+Everything you need to know...
 
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Download the plugin
+2. Upload the plugin to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. Select 'Slackvite Settings' menu item in Dashboard -> Settings to configure
+5. Copy and Paste your [Slackvite API Key](https://slackvite.com/app/home)
+6. Enter your Team Name in the plugin Settings
+7. Create New Page, select Slackvite Page template
+8. Share your Slack community invite page
+9. drink coffee
+10. dayum, 10 steps?
 
 Frequently Asked Questions
 ------
