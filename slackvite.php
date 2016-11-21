@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Slackvite
-Plugin URI: http://hbt.io/
-Version: 1.0.1
-Author: Harri Bell-Thomas
-Author URI: http://hbt.io/
+Plugin URI: https://slackvite.com/wordpress
+Version: 0.3
+Author: Andy Brudtkuhl
+Author URI: https://youmetandy.com
 */
 
 class Slackvite {
