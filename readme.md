@@ -1,20 +1,20 @@
 Slackvite
 =============
-Contributors: abrudtkuhl
-Donate link: https://slackvite.com/wordpress
-Tags: slack, landing page
-Requires at least: 3.7
-Tested up to: 4.6.1
-Stable tag: 0.4.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Contributors: abrudtkuhl  
+Donate link: https://slackvite.com/wordpress  
+Tags: slack, landing page  
+Requires at least: 3.7  
+Tested up to: 4.6.1  
+Stable tag: 0.4.0  
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
-Quickly setup an invite page for a public Slack community
+Quickly setup an invite page for a public Slack community  
 
 Description
 ------
 
-Setup a custom invite landing page for your public Slack community using the Slackvite WordPress plugin
+Setup a custom invite landing page for your public Slack community using the Slackvite WordPress plugin. Uses [Slackvite API]('https://slackvite.com/?utm_campaign=githhub')
 
 Installation
 ------
