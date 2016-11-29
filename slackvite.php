@@ -248,9 +248,7 @@ class Slackvite {
 	function register_assets() {
 		// enqueue vendor assets
 		if ( is_page_template('templates/slackvite.php') ) {
-			wp_enqueue_style( 'slackvite_css_bootstrap', plugins_url( '/vendor/twitter/bootstrap/dist/css/bootstrap.min.css', __FILE__ ) );
-			wp_enqueue_style( 'slackvite_css_fontawesome', plugins_url( '/vendor/fortawesome/css/font-awesome.min.css', __FILE__ ) );
-			wp_enqueue_style( 'slackvite_css_template', plugins_url( '/templates/slackvite.css', __FILE__ ) );
+			wp_enqueue_style( 'slackvite_css_template', plugins_url( '/templates/slackvite.min.css', __FILE__ ) );
 		}
 	}
 }

@@ -41,13 +41,22 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
+
+		concat: {
+		   css: {
+			   src: ['vendor/fortawesome/font-awesome/css/font-awesome.min.css', 'vendor/twitter/bootstrap/dist/css/bootstrap.min.css', 'templates/slackvite.css'],
+			   dest: 'templates/slackvite.min.css'
+		   },
+	   }
 	} );
 
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
-	grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
-	grunt.registerTask( 'readme', ['wp_readme_to_markdown'] );
-
+	//grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	//grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
+	//grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+	grunt.loadNpmTasks( 'grunt-contrib-concat' );
+	//grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
+	//grunt.registerTask( 'readme', ['wp_readme_to_markdown'] );
+	grunt.registerTask( 'css', ['concat'] );
 	grunt.util.linefeed = '\n';
 
 };
