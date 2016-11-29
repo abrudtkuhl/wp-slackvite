@@ -33,6 +33,7 @@ class Slackvite {
 	}
 
 	public $flash_message;
+	public $success = false;
 
 	/**
 	 * Initializes the plugin by setting filters and administration functions.
@@ -178,10 +179,16 @@ class Slackvite {
 
 	public function slackvite_invite_signup() {
 		if ( isset( $_POST['slackvite-email'] ) ) {
+			$email = sanitize_email($_POST['slackvite-email']);
+
+			if( !is_email($email) ) {
+				$this->flash_message = "Invalid Email Address";
+				return;
+			}
 
 			$args = array(
 				'body' => array(
-					'email'	=> 	$_POST['slackvite-email'],
+					'email'	=> 	$email,
 					'key'	=>	get_option('slackvite_team_api_key')
 				)
 			);
@@ -189,6 +196,7 @@ class Slackvite {
 			$response = wp_remote_post( 'https://slackvite.com/api/invite', $args);
 
 			if ( 200 == $response['response']['code'] ) {
+				$this->success = true;
 				$this->flash_message = '<strong>Success!</strong> ' . $response['body']['message'];
 			} elseif ( 422 == $response['response']['code'] ) {
 				$this->flash_message = '<strong>There was a problem:</strong> '.$response['body'];

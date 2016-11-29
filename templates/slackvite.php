@@ -22,20 +22,22 @@
             <div class="col-md-12">
                 <div class="landing-container">
                     <div class="landing-hero">
-                        <?php if (count($_POST)>0) : ?>
-                            <div class="alert alert-success">
-                                <strong>Success! Check your email to confirm</strong>
-                            </div>
-                        <?php endif; ?>
-                        <?php if ( isset( $_POST['slackvite-email'] ) && isset( $slackvite->flash_message ) ) : ?>
+                        <?php if ( !$slackvite->success && isset( $slackvite->flash_message ) ) : ?>
                             <div class="alert alert-danger">
                                 <strong>Oops, An Error Happened</strong><br />
                                 <?php echo $slackvite->flash_message; ?>
                             </div>
                         <?php endif; ?>
 
+                        <?php if ( $slackvite->success && isset( $slackvite->flash_message ) ) : ?>
+                            <div class="alert alert-info">
+                                <strong>Success!</strong><br />
+                                <?php echo $slackvite->flash_message; ?>
+                            </div>
+                        <?php endif; ?>
+
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                            <h1>Join <strong><?php echo get_option('slackvite_team_name'); ?></strong> On Slack</h1>
+                            <h1>Join <strong><?php echo $slackvite->get_team_name(); ?></strong> On Slack</h1>
                             <?php if( strlen(get_the_content()) > 0 ) : ?>
                                 <?php the_content(); ?>
                             <?php else: ?>
