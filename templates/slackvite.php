@@ -64,16 +64,5 @@
     <footer class="footer navbar-fixed-bottom" role="footer">
         <a href="https://slackvite.com/?utm_source=wordpress_plugin&utm_medium=landing_page&utm_content=<?php echo $slackvite->get_landing_page_url(); ?>" title="Slack Team Signup Pages">powered by <strong>slackvite</strong></a>
     </footer>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-586943-65', 'auto');
-      ga('send', 'pageview');
-
-    </script>
 </body>
 </html>
