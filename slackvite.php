@@ -82,7 +82,7 @@ class Slackvite {
 			'templates/slackvite.php' => 'Slackvite',
 		);
 
-        add_action( 'wp_enqueue_scripts', array( $this, 'register_style') );
+		add_action( 'wp_print_styles', array( $this, 'register_assets') );
 	}
 
 	/**
@@ -163,11 +163,6 @@ class Slackvite {
 
 	}
 
-    public function register_style() {
-        wp_register_style( 'slackvite-styles',  plugin_dir_url( __FILE__ ) . 'templates/slackvite.css' );
-        wp_enqueue_style( 'slackvite-styles' );
-    }
-
     public function get_background_image() {
 		return 'https://source.unsplash.com/random/2000x2000';
 	}
@@ -175,6 +170,10 @@ class Slackvite {
 	public function get_landing_page_url() {
 		global $wp;
 		return home_url(add_query_arg(array(),$wp->request));
+	}
+
+	public function get_team_name() {
+		return get_option('slackvite_team_name');
 	}
 
 	public function slackvite_invite_signup() {
@@ -245,5 +244,15 @@ class Slackvite {
 		register_setting( 'slackvite-settings-group', 'slackvite_team_api_key' );
 		register_setting( 'slackvite-settings-group', 'slackvite_team_name' );
 	}
+
+	function register_assets() {
+		// enqueue vendor assets
+		if ( is_page_template('templates/slackvite.php') ) {
+			wp_enqueue_style( 'slackvite_css_bootstrap', plugins_url( '/vendor/twitter/bootstrap/dist/css/bootstrap.min.css', __FILE__ ) );
+			wp_enqueue_style( 'slackvite_css_fontawesome', plugins_url( '/vendor/fortawesome/css/font-awesome.min.css', __FILE__ ) );
+			wp_enqueue_style( 'slackvite_css_template', plugins_url( '/templates/slackvite.css', __FILE__ ) );
+		}
+	}
 }
+
 add_action( 'plugins_loaded', array( 'Slackvite', 'get_instance' ) );

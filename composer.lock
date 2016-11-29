@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0736a7dc79f5664ee64e6e7142cfb0b2",
-    "content-hash": "49b5ebfaa696af30a3740458ccb08684",
+    "hash": "1a28c59d58ef30d14c09505d928c0805",
+    "content-hash": "797cf4531939bf0e45ab096985a7b4d0",
     "packages": [
         {
             "name": "fortawesome/font-awesome",
@@ -54,6 +54,57 @@
                 "icon"
             ],
             "time": "2016-10-24 15:52:54"
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "v3.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "81df608a40bf0629a1dc08e584849bb1e43e0b7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/81df608a40bf0629a1dc08e584849bb1e43e0b7a",
+                "reference": "81df608a40bf0629a1dc08e584849bb1e43e0b7a",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2015-11-24 19:37:05"
         }
     ],
     "packages-dev": [],

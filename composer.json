@@ -1,5 +1,6 @@
 {
     "require": {
-        "fortawesome/font-awesome": "^4.7"
+        "fortawesome/font-awesome": "^4.7",
+        "twitter/bootstrap": "v3.3.6"
     }
 }
