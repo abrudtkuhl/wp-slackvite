@@ -25,14 +25,14 @@
                         <?php if ( !$slackvite->success && isset( $slackvite->flash_message ) ) : ?>
                             <div class="alert alert-danger">
                                 <strong>Oops, An Error Happened</strong><br />
-                                <?php echo $slackvite->flash_message; ?>
+                                <?php echo esc_html($slackvite->flash_message); ?>
                             </div>
                         <?php endif; ?>
 
                         <?php if ( $slackvite->success && isset( $slackvite->flash_message ) ) : ?>
                             <div class="alert alert-info">
                                 <strong>Success!</strong><br />
-                                <?php echo $slackvite->flash_message; ?>
+                                <?php echo esc_html($slackvite->flash_message); ?>
                             </div>
                         <?php endif; ?>
 

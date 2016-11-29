@@ -32,7 +32,7 @@ class Slackvite {
 
 	}
 
-	public $flash_message;
+	public $flash_message = '';
 	public $success = false;
 
 	/**
@@ -197,10 +197,10 @@ class Slackvite {
 
 			if ( 200 == $response['response']['code'] ) {
 				$this->success = true;
-				$this->flash_message = '<strong>Success!</strong> ' . $response['body']['message'];
-			} elseif ( 422 == $response['response']['code'] ) {
-				$this->flash_message = '<strong>There was a problem:</strong> '.$response['body'];
 			}
+
+			$result = json_decode($response['body']);
+			$this->flash_message = $result->message;
 
 			if ( is_wp_error($response) ) {
 				$this->flash_message = 'Well, something bad happened.';
